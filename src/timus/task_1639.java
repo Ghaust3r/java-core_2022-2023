@@ -1,0 +1,29 @@
+package timus;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+/*
+Исходные данные
+В единственной строке через пробел записаны целые числа m и n (1 ≤ m, n ≤ 50) — длина и ширина шоколадки в дольках.
+Результат
+Если для того, чтобы выиграть, Карлсону нужно ходить первым, выведите в единственной строке «[:=[first]», иначе выведите «[second]=:]».
+ */
+public class task_1639 {
+
+    public static void main(String str[]) throws IOException {
+        BufferedReader consoleReader = new BufferedReader(new InputStreamReader(System.in));
+        String[] input = consoleReader.readLine().split(" ");
+        consoleReader.close();
+
+        int m = Integer.parseInt(input[0]);
+        int n = Integer.parseInt(input[1]);
+        int calc = m * n - 1;
+
+        if ((calc & 1) > 0)
+            System.out.println("[:=[first]");
+        else
+            System.out.println("[second]=:]");
+    }
+}
